@@ -1,0 +1,325 @@
+:root {
+  --color-primary: #0a131d;     /* Azul noturno profundo da imagem */
+  --color-card-bg: #111d2b;     /* Grafite/Azul escuro dos cartões */
+  --color-accent: #32bcad;      /* Destaque turquesa */
+  --color-silver: #e2e8f0;      /* Tom prateado dos títulos */
+  --color-text: #94a3b8;        /* Texto de leitura */
+  --radius-md: 12px;
+  --max-width: 1200px;
+}
+
+body.theme-dark {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+.hero-livro {
+  padding: 4rem 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: var(--color-silver);
+  margin-bottom: 0.2rem;
+  letter-spacing: 2px;
+}
+
+.subtitulo-livro {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.frase-impacto {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Sombra e iluminação para a capa sobressair */
+.capa-3d {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(50, 188, 173, 0.2), 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   SEÇÃO DE VENDAS & BOTÕES (Nicho de Livros)
+   ========================================================================== */
+
+.secao-venda {
+  padding: 4rem 0;
+  background-color: rgba(17, 29, 43, 0.4);
+}
+
+.section-subtitle {
+  color: var(--color-text);
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Estrutura dos 2 cartões de venda */
+.grid-venda {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card-venda {
+  background: var(--color-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Destaque para o cartão da Amazon */
+.card-venda.card-destaque {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 30px rgba(50, 188, 173, 0.15);
+}
+
+.card-venda:hover {
+  transform: translateY(-5px);
+}
+
+.tag-venda {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: #04090e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.icon-venda {
+  font-size: 2.5rem;
+  color: var(--color-silver);
+  margin-bottom: 0.8rem;
+}
+
+.card-header h3 {
+  color: var(--color-silver);
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.plataforma {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Lista de benefícios */
+.beneficios-venda {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.beneficios-venda li {
+  margin-bottom: 0.8rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.beneficios-venda i {
+  color: var(--color-accent);
+}
+
+/* Botões Principais de Ação */
+.btn-comprar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+/* Estilo do Botão Amazon */
+.btn-amazon-full {
+  background-color: #ff9900;
+  color: #111;
+}
+
+.btn-amazon-full:hover {
+  background-color: #e68a00;
+  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+}
+
+/* Estilo do Botão UICLAP */
+.btn-uiclap-full {
+  background-color: var(--color-accent);
+  color: #04090e;
+}
+
+.btn-uiclap-full:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(50, 188, 173, 0.4);
+  }
+
+/* ==========================================================================
+   SEÇÃO SOBRE A AUTORA
+   ========================================================================== */
+
+.secao-autora {
+  padding: 5rem 0;
+  background-color: var(--color-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grid-autora {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Imagem e Moldura */
+.autora-imagem-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.foto-autora {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.badge-autora {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-accent);
+  color: var(--color-silver);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Conteúdo de Texto */
+.subtitulo-autora {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.autora-conteudo h2 {
+  color: var(--color-silver);
+  font-size: 2.2rem;
+  margin: 0.2rem 0 1rem 0;
+}
+
+.destaque-bio {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.texto-bio {
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Tags de Destaque */
+.tags-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.tags-expertise span {
+  background: rgba(50, 188, 173, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(50, 188, 173, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Obras da Autora */
+.obras-autora h4 {
+  color: var(--color-silver);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.lista-obras {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.obra-tag {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.obra-tag.destaque {
+  border-color: var(--color-accent);
+  color: var(--color-silver);
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 991px) {
+  .grid-autora {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
