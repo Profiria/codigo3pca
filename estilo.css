@@ -1,59 +1,68 @@
+/* ==========================================================================
+   TEMA CLARO E ELEGANTE (LIVRO EM DESTAQUE)
+   ========================================================================== */
 :root {
-  --color-primary: #0a131d;     /* Azul noturno profundo da imagem */
-  --color-card-bg: #111d2b;     /* Grafite/Azul escuro dos cartões */
-  --color-accent: #32bcad;      /* Destaque turquesa */
-  --color-silver: #e2e8f0;      /* Tom prateado dos títulos */
-  --color-text: #94a3b8;        /* Texto de leitura */
+  --color-primary: #0a131d;     /* Azul-escuro da capa (usado em títulos e botões) */
+  --color-bg-body: #ffffff;     /* Fundo branco puro para contrastar com a capa */
+  --color-bg-section: #f4f7f9;  /* Cinza-azulado muito suave para alternar seções */
+  --color-card-bg: #ffffff;     /* Fundo dos cartões em branco com sombra suave */
+  --color-accent: #22998b;      /* Verde-água/Turquesa vibrante para detalhes */
+  --color-text: #334155;        /* Texto cinza-escuro confortável para leitura */
+  --color-titles: #0a131d;      /* Títulos em azul-noturno */
   --radius-md: 12px;
-  --max-width: 1200px;
+  --max-width: 1140px;
 }
 
-body.theme-dark {
-  background-color: var(--color-primary);
+body {
+  background-color: var(--color-bg-body);
   color: var(--color-text);
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
+  line-height: 1.6;
 }
 
-.hero-livro {
-  padding: 4rem 0;
+/* CONTAINER GLOBAL COM RESPIRO NAS BORDAS DO COMPUTADOR E TABLET */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
 }
 
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
-.hero-text h1 {
-  font-size: 2.8rem;
-  color: var(--color-silver);
-  margin-bottom: 0.2rem;
-  letter-spacing: 2px;
-}
-
-.subtitulo-livro {
-  font-size: 1.3rem;
-  color: var(--color-accent);
-  font-weight: 400;
-  margin-top: 0;
-}
-
-.frase-impacto {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  border-left: 3px solid var(--color-accent);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-}
-
-/* Sombra e iluminação para a capa sobressair */
+/* DESTACANDO A CAPA COM SOMBRA SUAVE NO FUNDO BRANCO */
 .capa-3d {
   width: 100%;
   max-width: 340px;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(50, 188, 173, 0.2), 0 0 20px rgba(0, 0, 0, 0.8);
+  /* Sombra elegante que faz a capa flutuar sobre o fundo claro */
+  box-shadow: 0 15px 35px rgba(10, 19, 29, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.capa-3d:hover {
+  transform: translateY(-5px);
+}
+
+/* CARTÕES E PILARES EM FUNDO CLARO */
+.card-pilar, .card-venda {
+  background: var(--color-card-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.card-pilar h4, .card-venda h3 {
+  color: var(--color-titles);
+}
+
+/* SEÇÃO ALTERNADA (FUNDO SUAVE PARA DAR RITMO) */
+.secao-autora, .secao-venda {
+  background-color: var(--color-bg-section);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 /* ==========================================================================
