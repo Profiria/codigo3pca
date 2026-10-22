@@ -437,7 +437,7 @@ body.theme-dark {
 /* Container Global: Garante 5% de respiro lateral em qualquer monitor ou tablet */
 .container {
   width: 90%;                /* Ocupa 90% da largura da tela */
-  max-width: 1140px;         /* Limite elegante de largura para o texto não ficar infinito */
+  max-width: 92%;         /* Limite elegante de largura para o texto não ficar infinito */
   margin: 0 auto;            /* Centraliza perfeitamente no meio da tela */
   padding-left: 1.5rem;      /* Respiro interno de segurança na esquerda */
   padding-right: 1.5rem;     /* Respiro interno de segurança na direita */
