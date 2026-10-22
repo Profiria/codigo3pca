@@ -429,3 +429,52 @@ body.theme-dark {
   line-height: 1.5;
   margin: 0;
 }
+
+/* ==========================================================================
+   AJUSTE DE CONTAINER E RESPIRO NAS BORDAS
+   ========================================================================== */
+
+/* Container Global: Garante 5% de respiro lateral em qualquer monitor ou tablet */
+.container {
+  width: 90%;                /* Ocupa 90% da largura da tela */
+  max-width: 1140px;         /* Limite elegante de largura para o texto não ficar infinito */
+  margin: 0 auto;            /* Centraliza perfeitamente no meio da tela */
+  padding-left: 1.5rem;      /* Respiro interno de segurança na esquerda */
+  padding-right: 1.5rem;     /* Respiro interno de segurança na direita */
+  box-sizing: border-box;    /* Inclui o padding no cálculo da largura para não vazar */
+}
+
+/* Espaçamento Vertical e Horizontal das Seções */
+.section, 
+.secao-sinopse, 
+.secao-autora, 
+.secao-venda {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 1rem;       /* Garante que o fundo da seção dê margem à borda da tela */
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ajuste Fino de Leitura para Parágrafos e Textos da Sinopse */
+.sinopse-corpo, 
+.autora-conteudo {
+  max-width: 800px;         /* Mantém a largura do bloco de texto confortável para leitura */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;          /* Evita que o texto encoste nas laterais em tablets ou janelas menores */
+}
+
+/* Ajuste específico para Tablets e Notebooks Menores (até 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 92%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
