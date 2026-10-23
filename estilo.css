@@ -3,11 +3,11 @@
    ========================================================================== */
 :root {
   --color-primary: #0a131d;     /* Azul-escuro da capa (usado em títulos e botões) */
-  --color-bg-body: #ffffff;     /* Fundo branco puro para contrastar com a capa */
+  --color-bg-body: #ffffff;     /* Fundo branco puro */
   --color-bg-section: #f4f7f9;  /* Cinza-azulado muito suave para alternar seções */
-  --color-card-bg: #ffffff;     /* Fundo dos cartões em branco com sombra suave */
-  --color-accent: #22998b;      /* Verde-água/Turquesa vibrante para detalhes */
-  --color-text: #334155;        /* Texto cinza-escuro confortável para leitura */
+  --color-card-bg: #ffffff;     /* Fundo dos cartões em branco */
+  --color-accent: #22998b;      /* Verde-água/Turquesa para detalhes */
+  --color-text: #334155;        /* Texto cinza-escuro para leitura */
   --color-titles: #0a131d;      /* Títulos em azul-noturno */
   --radius-md: 12px;
   --max-width: 1140px;
