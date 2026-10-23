@@ -190,7 +190,7 @@ h1, h2, h3, h4,
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 880px;
-  margin: 0 auto;
+  margin: 1.5rem auto 0 auto;
 }
 
 .card-venda {
@@ -299,6 +299,12 @@ h1, h2, h3, h4,
   box-shadow: 0 4px 12px rgba(30, 133, 120, 0.3);
 }
 
+* Espaçamento entre o cabeçalho/subtítulo e os cartões de compra */
+.secao-venda .section-subtitle {
+  color: var(--color-accent);
+  margin-top: -0.5rem;
+  margin-bottom: 3.5rem; /* Aumentado para dar o respiro correto para a tag 'MAIS POPULAR' */
+}
 /* ==========================================================================
    7. SEÇÃO SOBRE A AUTORA
    ========================================================================== */
