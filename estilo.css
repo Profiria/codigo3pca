@@ -1,27 +1,34 @@
 /* ==========================================================================
-   TEMA CLARO E ELEGANTE (LIVRO EM DESTAQUE)
+   1. VARIÁVEIS GLOBAIS E TEMA LIGHT PREMIUM
    ========================================================================== */
 :root {
-  --color-primary: #0a131d;     /* Azul-escuro da capa (usado em títulos e botões) */
+  --color-primary: #0a131d;     /* Azul-noturno profundo da capa */
   --color-bg-body: #ffffff;     /* Fundo branco puro */
-  --color-bg-section: #f4f7f9;  /* Cinza-azulado muito suave para alternar seções */
+  --color-bg-section: #f4f7f9;  /* Cinza-azulado muito claro para alternância */
   --color-card-bg: #ffffff;     /* Fundo dos cartões em branco */
-  --color-accent: #22998b;      /* Verde-água/Turquesa para detalhes */
-  --color-text: #334155;        /* Texto cinza-escuro para leitura */
-  --color-titles: #0a131d;      /* Títulos em azul-noturno */
+  
+  --color-accent: #1e8578;      /* Verde-água/Turquesa escuro (Contraste Acessível) */
+  --color-accent-light: #e6f5f3;/* Fundo suave para destaques */
+  
+  --color-text-main: #1e293b;   /* Texto principal (Azul/Cinza escuro para máxima nitidez) */
+  --color-text-muted: #475569;  /* Texto secundário/subtítulos */
+  --color-titles: #0a131d;      /* Títulos principais em azul-noturno */
+  
   --radius-md: 12px;
   --max-width: 1140px;
 }
 
 body {
   background-color: var(--color-bg-body);
-  color: var(--color-text);
-  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
   line-height: 1.6;
 }
 
-/* CONTAINER GLOBAL COM RESPIRO NAS BORDAS DO COMPUTADOR E TABLET */
+/* ==========================================================================
+   2. ESTRUTURA E CONTAINERS
+   ========================================================================== */
 .container {
   width: 90%;
   max-width: var(--max-width);
@@ -31,13 +38,55 @@ body {
   box-sizing: border-box;
 }
 
-/* DESTACANDO A CAPA COM SOMBRA SUAVE NO FUNDO BRANCO */
+.section, 
+.secao-sinopse, 
+.secao-autora, 
+.secao-venda {
+  padding: 4.5rem 0;
+  box-sizing: border-box;
+}
+
+/* Alternância suave de seções */
+.secao-autora, 
+.secao-venda {
+  background-color: var(--color-bg-section);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   3. TIPOGRAFIA E CABEÇALHOS
+   ========================================================================== */
+h1, h2, h3, h4, 
+.section-title, 
+.autora-conteudo h2 {
+  color: var(--color-titles);
+  font-weight: 700;
+}
+
+.section-subtitle, 
+.subtitulo-sinopse, 
+.subtitulo-autora {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   4. HERO SECTION E DESTAQUE DA CAPA
+   ========================================================================== */
+.hero-livro {
+  padding: 3.5rem 0;
+  background-color: var(--color-bg-body);
+}
+
 .capa-3d {
   width: 100%;
-  max-width: 340px;
+  max-width: 320px;
   border-radius: 8px;
-  /* Sombra elegante que faz a capa flutuar sobre o fundo claro */
-  box-shadow: 0 15px 35px rgba(10, 19, 29, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(10, 19, 29, 0.2), 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -45,79 +94,128 @@ body {
   transform: translateY(-5px);
 }
 
-/* CARTÕES E PILARES EM FUNDO CLARO */
-.card-pilar, .card-venda {
+/* ==========================================================================
+   5. SEÇÃO SINOPSE E OS 5 PILARES
+   ========================================================================== */
+.secao-sinopse {
+  background-color: var(--color-bg-body);
+}
+
+.frase-mestra {
+  font-size: 1.4rem;
+  color: var(--color-titles);
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.sinopse-corpo p {
+  color: var(--color-text-main);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.destaque-chamada {
+  background: var(--color-accent-light);
+  border-left: 4px solid var(--color-accent);
+  color: var(--color-titles);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  text-align: left;
+}
+
+/* Grid dos Pilares */
+.grid-5-pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.card-pilar {
   background: var(--color-card-bg);
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-md);
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  padding: 2rem 1.2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
 }
 
-.card-pilar h4, .card-venda h3 {
+.card-pilar:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(30, 133, 120, 0.12);
+}
+
+.numero-pilar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #cbd5e1;
+}
+
+.icon-pilar {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 0.8rem;
+}
+
+.card-pilar h4 {
   color: var(--color-titles);
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem 0;
 }
 
-/* SEÇÃO ALTERNADA (FUNDO SUAVE PARA DAR RITMO) */
-.secao-autora, .secao-venda {
-  background-color: var(--color-bg-section);
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+.card-pilar p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ==========================================================================
-   SEÇÃO DE VENDAS & BOTÕES (Nicho de Livros)
+   6. SEÇÃO DE VENDAS & CARTÕES DE COMPRA
    ========================================================================== */
-
-.secao-venda {
-  padding: 4rem 0;
-  background-color: rgba(17, 29, 43, 0.4);
-}
-
-.section-subtitle {
-  color: var(--color-text);
-  margin-top: -1rem;
-  margin-bottom: 2.5rem;
-}
-
-/* Estrutura dos 2 cartões de venda */
 .grid-venda {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 900px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
 .card-venda {
   background: var(--color-card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #cbd5e1;
   border-radius: var(--radius-md);
   padding: 2.5rem 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Destaque para o cartão da Amazon */
 .card-venda.card-destaque {
-  border-color: var(--color-accent);
-  box-shadow: 0 8px 30px rgba(50, 188, 173, 0.15);
-}
-
-.card-venda:hover {
-  transform: translateY(-5px);
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 8px 25px rgba(30, 133, 120, 0.15);
 }
 
 .tag-venda {
   position: absolute;
-  top: -12px;
+  top: -14px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-accent);
-  color: #04090e;
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -127,15 +225,15 @@ body {
 }
 
 .icon-venda {
-  font-size: 2.5rem;
-  color: var(--color-silver);
-  margin-bottom: 0.8rem;
+  font-size: 2.2rem;
+  color: var(--color-titles);
+  margin-bottom: 0.6rem;
 }
 
 .card-header h3 {
-  color: var(--color-silver);
+  color: var(--color-titles);
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
 }
 
 .plataforma {
@@ -144,17 +242,17 @@ body {
   font-weight: 600;
 }
 
-/* Lista de benefícios */
+/* Benefícios (Fixa o contraste do texto) */
 .beneficios-venda {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 1.8rem 0;
   text-align: left;
 }
 
 .beneficios-venda li {
   margin-bottom: 0.8rem;
-  color: #cbd5e1;
+  color: var(--color-text-main); /* Corrigido de #cbd5e1 para escuro */
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -165,71 +263,49 @@ body {
   color: var(--color-accent);
 }
 
-/* Botões Principais de Ação */
-.btn-comprar {
-  display: flex;
+/* Botões de Conversão */
+.btn-comprar, .btn-amazon, .btn-uiclap {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.4rem;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: all 0.25s ease;
 }
 
-/* Estilo do Botão Amazon */
 .btn-amazon-full {
-  background-color: #ff9900;
-  color: #111;
+  background-color: #e67e22;
+  color: #ffffff;
 }
 
 .btn-amazon-full:hover {
-  background-color: #e68a00;
-  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+  background-color: #d35400;
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
 }
 
-/* Estilo do Botão UICLAP */
 .btn-uiclap-full {
   background-color: var(--color-accent);
-  color: #04090e;
+  color: #ffffff;
 }
 
 .btn-uiclap-full:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 4px 15px rgba(50, 188, 173, 0.4);
-  }
+  background-color: #16655c;
+  box-shadow: 0 4px 12px rgba(30, 133, 120, 0.3);
+}
 
 /* ==========================================================================
-   SEÇÃO SOBRE A AUTORA
+   7. SEÇÃO SOBRE A AUTORA
    ========================================================================== */
-
-.secao-autora {
-  padding: 5rem 0;
-  background-color: var(--color-bg-section);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.grid-autora {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 3.5rem;
-  align-items: center;
-}
-
-/* Imagem e Moldura */
-.autora-imagem-wrapper {
-  position: relative;
-  text-align: center;
-}
-
 .foto-autora {
   width: 100%;
-  max-width: 380px;
+  max-width: 340px;
   border-radius: 16px;
   border: 2px solid var(--color-accent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
 
@@ -240,33 +316,18 @@ body {
   transform: translateX(-50%);
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-accent);
-  color: var(--color-silver);
+  color: var(--color-titles);
   padding: 0.4rem 1.2rem;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Conteúdo de Texto */
-.subtitulo-autora {
-  color: var(--color-accent);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-}
-
-.autora-conteudo h2 {
-  color: var(--color-silver);
-  font-size: 2.2rem;
-  margin: 0.2rem 0 1rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .destaque-bio {
-  color: #ffffff;
+  color: var(--color-titles); /* Corrigido de #ffffff para escuro */
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
   border-left: 3px solid var(--color-accent);
   padding-left: 1rem;
@@ -274,55 +335,35 @@ body {
 }
 
 .texto-bio {
-  color: var(--color-text);
+  color: var(--color-text-main);
   font-size: 0.98rem;
   line-height: 1.7;
   margin-bottom: 1rem;
 }
 
-/* Tags de Destaque */
-.tags-expertise {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 1.5rem 0;
-}
-
 .tags-expertise span {
-  background: rgba(50, 188, 173, 0.1);
+  background: var(--color-accent-light);
   color: var(--color-accent);
-  border: 1px solid rgba(50, 188, 173, 0.2);
+  border: 1px solid rgba(30, 133, 120, 0.2);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
 }
 
-/* Obras da Autora */
-.obras-autora h4 {
-  color: var(--color-silver);
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.lista-obras {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
 .obra-tag {
-  background: var(--color-card-bg);
-  color: var(--color-text);
+  background: #ffffff;
+  color: var(--color-text-main);
   padding: 0.5rem 0.9rem;
   border-radius: 6px;
   font-size: 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #cbd5e1;
 }
 
 .obra-tag.destaque {
   border-color: var(--color-accent);
-  color: var(--color-silver);
+  color: var(--color-titles);
+  font-weight: 600;
 }
 
 /* Responsividade para Telas Menores */
@@ -330,160 +371,5 @@ body {
   .grid-autora {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-  }
-}
-/* ==========================================================================
-   SEÇÃO SINOPSE & OS 5 PILARES
-   ========================================================================== */
-
-.secao-sinopse {
-  padding: 5rem 0;
-  background: linear-gradient(180deg, var(--color-bg-section) 0%, #0d1927 100%);
-}
-
-.subtitulo-sinopse {
-  color: var(--color-accent);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-.frase-mestra {
-  font-size: 1.5rem;
-  color: var(--color-silver);
-  margin-top: -0.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Corpo da Sinopse */
-.sinopse-corpo {
-  max-width: 800px;
-  margin: 0 auto 4rem auto;
-  text-align: center;
-}
-
-.sinopse-corpo p {
-  color: var(--color-text);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.destaque-chamada {
-  background: rgba(50, 188, 173, 0.08);
-  border-left: 4px solid var(--color-accent);
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 1.2rem 1.8rem;
-  margin: 2rem 0;
-  border-radius: 0 8px 8px 0;
-  text-align: left;
-}
-
-/* Grid dos 5 Pilares */
-.titulo-pilares {
-  color: var(--color-silver);
-  font-size: 1.6rem;
-  margin-bottom: 2.5rem;
-}
-
-.grid-5-pilares {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.2rem;
-}
-
-.card-pilar {
-  background: var(--color-card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.2rem;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.card-pilar:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-accent);
-  box-shadow: 0 8px 20px rgba(50, 188, 173, 0.15);
-}
-
-.numero-pilar {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.15);
-}
-
-.icon-pilar {
-  font-size: 2rem;
-  color: var(--color-accent);
-  margin-bottom: 1rem;
-}
-
-.card-pilar h4 {
-  color: var(--color-silver);
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
-}
-
-.card-pilar p {
-  color: var(--color-text);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* ==========================================================================
-   AJUSTE DE CONTAINER E RESPIRO NAS BORDAS
-   ========================================================================== */
-
-/* Container Global: Garante 5% de respiro lateral em qualquer monitor ou tablet */
-.container {
-  width: 90%;                /* Ocupa 90% da largura da tela */
-  max-width: 92%;         /* Limite elegante de largura para o texto não ficar infinito */
-  margin: 0 auto;            /* Centraliza perfeitamente no meio da tela */
-  padding-left: 1.5rem;      /* Respiro interno de segurança na esquerda */
-  padding-right: 1.5rem;     /* Respiro interno de segurança na direita */
-  box-sizing: border-box;    /* Inclui o padding no cálculo da largura para não vazar */
-}
-
-/* Espaçamento Vertical e Horizontal das Seções */
-.section, 
-.secao-sinopse, 
-.secao-autora, 
-.secao-venda {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  padding-left: 1rem;       /* Garante que o fundo da seção dê margem à borda da tela */
-  padding-right: 1rem;
-  box-sizing: border-box;
-}
-
-/* Ajuste Fino de Leitura para Parágrafos e Textos da Sinopse */
-.sinopse-corpo, 
-.autora-conteudo {
-  max-width: 800px;         /* Mantém a largura do bloco de texto confortável para leitura */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;          /* Evita que o texto encoste nas laterais em tablets ou janelas menores */
-}
-
-/* Ajuste específico para Tablets e Notebooks Menores (até 1024px) */
-@media (max-width: 1024px) {
-  .container {
-    width: 92%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .section {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
   }
 }
