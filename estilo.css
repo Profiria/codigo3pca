@@ -207,7 +207,7 @@ body {
 
 .secao-autora {
   padding: 5rem 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg-section);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -338,7 +338,7 @@ body {
 
 .secao-sinopse {
   padding: 5rem 0;
-  background: linear-gradient(180deg, var(--color-primary) 0%, #0d1927 100%);
+  background: linear-gradient(180deg, var(--color-bg-section) 0%, #0d1927 100%);
 }
 
 .subtitulo-sinopse {
