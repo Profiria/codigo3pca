@@ -114,6 +114,8 @@ h1, h2, h3, h4,
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .destaque-chamada {
@@ -252,7 +254,7 @@ h1, h2, h3, h4,
 
 .beneficios-venda li {
   margin-bottom: 0.8rem;
-  color: var(--color-text-main); /* Corrigido de #cbd5e1 para escuro */
+  color: var(--color-text-main);
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -335,7 +337,7 @@ h1, h2, h3, h4,
 }
 
 .destaque-bio {
-  color: var(--color-titles); /* Corrigido de #ffffff para escuro */
+  color: var(--color-titles);
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -349,6 +351,8 @@ h1, h2, h3, h4,
   font-size: 0.98rem;
   line-height: 1.7;
   margin-bottom: 1rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .tags-expertise {
