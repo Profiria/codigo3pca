@@ -432,92 +432,56 @@ h1, h2, h3, h4,
   }
 }
 /* ==========================================================================
-   RODAPÉ E REDES SOCIAIS
+   RODAPÉ E REDES SOCIAIS (TEMA CLARO / PALETA ROSÉ OU AZUL)
    ========================================================================== */
 .footer {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 3.5rem 0 2rem 0;
-  margin-top: 2rem;
+  background-color: var(--color-bg-section, #fff5f6);
+  border-top: 1px solid #e2e8f0;
+  padding: 3rem 0 2rem 0;
+  margin-top: 3rem;
 }
 
-.footer-title {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin: 0 0 0.2rem 0;
-}
-
-.footer-tagline {
-  color: var(--color-accent);
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Ícones Sociais */
 .footer-social {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1.2rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  font-size: 1.2rem;
+  background-color: #ffffff;
+  color: var(--color-titles, #6B0F2A); /* Usa a cor escura do tema (Vinho ou Azul) */
+  font-size: 1.25rem;
   text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent, #A63D5F);
   color: #ffffff;
   transform: translateY(-3px);
-}
-
-/* Links de Navegação do Rodapé */
-.footer-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.8rem;
-  flex-wrap: wrap;
-}
-
-.footer-nav a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-
-.footer-nav a:hover {
-  color: var(--color-accent);
-}
-
-.divisor {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .footer-divider {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   margin: 1.5rem auto;
   max-width: 400px;
 }
 
 .copyright {
-  color: #94a3b8;
-  font-size: 0.85rem;
+  color: var(--color-text-muted, #8A7C82);
+  font-size: 0.88rem;
   margin: 0;
 }
 
