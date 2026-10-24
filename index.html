@@ -23,10 +23,16 @@
         </p>
 
         <div class="cta-group">
-          <a href="https://www.amazon.com.br/dp/B0H6GTV5L2" target="_blank" class="btn-amazon">
+          <a href="https://www.amazon.com.br/dp/B0H6GTV5L2" target="_blank" class="btn-amazon" 
+            onclick="
+            if(typeof fbq !== 'undefined') { fbq('track', 'Lead'); } 
+            if(typeof gtag !== 'undefined') { gtag('event', 'conversion', {'send_to': 'ID_DO_GOOGLE_AQUI'}); }">
             <i class="fa-brands fa-amazon"></i> Adquirir no Kindle
           </a>
-          <a href="https://loja.uiclap.com/titulo/ua179970" target="_blank" class="btn-uiclap">
+          <a href="https://loja.uiclap.com/titulo/ua179970" target="_blank" class="btn-uiclap" 
+            onclick="
+            if(typeof fbq !== 'undefined') { fbq('track', 'Lead'); } 
+            if(typeof gtag !== 'undefined') { gtag('event', 'conversion', {'send_to': 'ID_DO_GOOGLE_AQUI'}); }">
             <i class="fa-solid fa-book"></i> Livro Impresso (UICLAP)
           </a>
         </div>
@@ -130,7 +136,10 @@
             <li><i class="fa-solid fa-check"></i> Disponível no Kindle Unlimited</li>
           </ul>
 
-          <a href="https://www.amazon.com.br/dp/B0H6GTV5L2" target="_blank" class="btn-comprar btn-amazon-full">
+          <a href="https://www.amazon.com.br/dp/B0H6GTV5L2" target="_blank" class="btn-comprar btn-amazon-full" 
+            onclick="
+            if(typeof fbq !== 'undefined') { fbq('track', 'Lead'); } 
+            if(typeof gtag !== 'undefined') { gtag('event', 'conversion', {'send_to': 'ID_DO_GOOGLE_AQUI'}); }">
             <i class="fa-brands fa-amazon"></i> Comprar na Amazon
           </a>
         </div>
@@ -149,7 +158,10 @@
             <li><i class="fa-solid fa-check"></i> Perfeito para colecionar e grifar</li>
           </ul>
 
-          <a href="https://loja.uiclap.com/titulo/ua179970" target="_blank" class="btn-comprar btn-uiclap-full">
+          <a href="https://loja.uiclap.com/titulo/ua179970" target="_blank" class="btn-comprar btn-uiclap-full" 
+            onclick="
+            if(typeof fbq !== 'undefined') { fbq('track', 'Lead'); } 
+            if(typeof gtag !== 'undefined') { gtag('event', 'conversion', {'send_to': 'ID_DO_GOOGLE_AQUI'}); }">
             <i class="fa-solid fa-box-archive"></i> Comprar Livro Físico
           </a>
         </div>
